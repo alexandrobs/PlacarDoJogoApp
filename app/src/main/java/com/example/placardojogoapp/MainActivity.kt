@@ -1,8 +1,6 @@
 package com.example.placardojogoapp
 
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.placardojogoapp.databinding.ActivityMainBinding
@@ -21,13 +19,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         if (savedInstanceState != null) {
-            Log.d("MainActivity", "savedIntanceState é diferente de nulo")
             scoreTeamOne = savedInstanceState.getInt("scoreTeamOne", 0)
             scoreTeamTwo = savedInstanceState.getInt("scoreTeamTwo", 0)
             scoreEqualsGoesToTwo = savedInstanceState.getInt("scoreEqualsGoesToTwo", 0)
-            Log.d("MainActivity", "onCreate scoreTeamOne: $scoreTeamOne")
-            Log.d("MainActivity", "onCreate scoreTeamTwo: $scoreTeamTwo")
-            Log.d("MainActivity", "onCreate scoreEqualsGoesToTwo: $scoreEqualsGoesToTwo")
         }
 
         binding.teamOneScore.text = scoreTeamOne.toString()
@@ -151,9 +145,6 @@ class MainActivity : AppCompatActivity() {
         outState.putInt("scoreTeamOne", scoreTeamOne)
         outState.putInt("scoreTeamTwo", scoreTeamTwo)
         outState.putInt("scoreEqualsGoesToTwo", scoreEqualsGoesToTwo)
-        Log.d("MainActivity", "Destroy scoreTeamOne: $scoreTeamOne")
-        Log.d("MainActivity", "Destroy scoreTeamTwo: $scoreTeamTwo")
-        Log.d("MainActivity", "Destroy scoreEqualsGoesToTwo: $scoreEqualsGoesToTwo")
     }
 
 
